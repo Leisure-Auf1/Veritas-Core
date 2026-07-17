@@ -1,278 +1,213 @@
-# A3 — Multi-Agent Personalized Learning System
+# Veritas-Core — Agent Runtime Framework
 
-> **Research Prototype v3.0** | 12 Agents + Workflow Orchestrator | 283 Tests | 15k+ LOC
->
-> *"Students describe what they want to learn. A team of AI agents does the rest."*
+> **Production-grade Agent Infrastructure** | 77 modules | 558 tests | Python 3.10+
 
----
-
-## 🔗 Project Navigation
-
-| Role | Repository | Description |
-|:-----|:-----------|:------------|
-| 🏠 Portfolio Hub | [Terence-Agent](https://github.com/Leisure-Auf1/Terence-Agent) | AI Agent Research Portfolio |
-| 🏗️ Next Evolution | [Veritas-Core](https://github.com/Leisure-Auf1/Veritas-Core) | Production-grade Agent Infrastructure |
-
-```
-A3-Multi-Agent-System
-        │
-        │  Research Prototype
-        │  Multi-agent experimentation
-        │  Prototype validation
-        ↓
-Veritas-Core
-```
-
-**A3 is the research foundation. Veritas-Core is the architectural evolution.**
+*Pluggable, observable, recoverable — the runtime that powers AI agent systems.*
 
 ---
 
-## What is A3?
+## What is Veritas-Core?
 
-A3 is a research prototype exploring **multi-agent collaboration for personalized learning**. Instead of using a single LLM, A3 deploys a **team of 12 specialized agents** — each with a focused role — collaborating through shared memory and an EventBus.
+Veritas-Core is a **standalone Agent Runtime Framework** extracted from the A3 Multi-Agent research system. It provides the infrastructure layer that any AI agent application needs: state machine execution, plugin system, recovery, lifecycle management, distributed coordination, and more.
 
-A3 focuses on:
-- Multi-agent experimentation
-- Agent collaboration patterns
-- Event-driven architecture
-- Prototype validation
+```
+pip install veritas-core
+```
 
-The architectural ideas discovered here continue into [Veritas-Core](https://github.com/Leisure-Auf1/Veritas-Core).
+```python
+from veritas import RuntimeClient, TaskRequest
+
+client = RuntimeClient()
+result = client.run(TaskRequest(objective="analyze", agent="evaluator"))
+print(result.status, result.execution_time_ms)
+```
+
+---
+
+## Evolution
+
+```
+A3-Multi-Agent-System (Research)
+    │
+    │  12 agents, 1042 tests, monolithic
+    │  Phase 1–6: runtime, sdk, recovery, plugins
+    │
+    ▼ Phase 7.0: Extraction via git filter-branch
+    │
+Veritas-Core (Framework)        A3 (Application)
+    │                               │
+    │  Runtime Engine                │  Learning agents
+    │  Public SDK                    │  Streamlit UI
+    │  Plugin system                 │  FastAPI
+    │  Recovery & Lifecycle          │  Multimodal gateway
+    │  Distributed runtime           │  Product API v2
+    │  Security & Memory             │
+    │                               │
+    ▼                               ▼
+  pip install veritas-core        depends on veritas-core
+```
 
 ---
 
 ## Architecture
 
 ```
-Student Input (Natural Language)
-         │
-         ▼
-┌─────────────────────────────────────────────┐
-│          Multi-Agent Runtime                 │
-│                                              │
-│  ProfileAgent → PlannerAgent → ResourceRec  │
-│  ResourceGenAgent → ContentAgent            │
-│       │              │              │        │
-│       └──────────────┼──────────────┘        │
-│                      ▼                       │
-│              AgentEvaluator                  │
-│                      │                       │
-│          ┌───────────┴───────────┐           │
-│          ▼                       ▼           │
-│   MetaReflector          ImprovementLoop     │
-├──────────────────────────────────────────────┤
-│  Infrastructure: EventBus | Memory | Trace   │
-│  LLMProvider | ReviewGate | DecisionExplainer│
-└──────────────────────────────────────────────┘
-         │
-         ▼
-    Dashboard (6-panel Streamlit)
+┌─────────────────────────────────────────────────────────────┐
+│                    Veritas-Core 7.0.0                        │
+│                                                             │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐ │
+│  │   Runtime   │  │     SDK     │  │      Plugins        │ │
+│  │   Engine    │  │  (Public    │  │  (Extensible         │ │
+│  │             │  │   API)      │  │   hook system)      │ │
+│  │ • State     │  │             │  │                     │ │
+│  │   Machine   │  │ • Client    │  │ • Base Plugin       │ │
+│  │ • Hooks     │  │ • Contracts │  │ • Registry          │ │
+│  │ • Events    │  │ • Config    │  │ • Loader            │ │
+│  │ • Observer  │  │ • Adapter   │  │ • Manager           │ │
+│  │ • Metrics   │  │ • Errors    │  │                     │ │
+│  └──────┬──────┘  └──────┬──────┘  └──────────┬──────────┘ │
+│         │                │                     │            │
+│  ┌──────┴──────┐  ┌──────┴──────┐  ┌──────────┴──────────┐ │
+│  │  Recovery   │  │  Lifecycle  │  │    Distributed      │ │
+│  │             │  │             │  │                     │ │
+│  │ • Retry     │  │ • Agent OS  │  │ • Node Registry     │ │
+│  │ • Rollback  │  │ • Session   │  │ • Event Bus         │ │
+│  │ • Fallback  │  │ • Timeline  │  │ • Remote Exec       │ │
+│  │ • Repair    │  │ • States    │  │ • Trace Collector   │ │
+│  └─────────────┘  └─────────────┘  └─────────────────────┘ │
+│                                                             │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐ │
+│  │  Security   │  │   Memory    │  │     Benchmark       │ │
+│  │             │  │             │  │                     │ │
+│  │ • Permission│  │ • Student   │  │ • Failure Injector  │ │
+│  │ • Gateway   │  │ • Experience│  │ • Scenarios         │ │
+│  │ • Guard     │  │ • Manager   │  │ • Metrics           │ │
+│  │ • Audit     │  │ • Extractor │  │ • Reporter          │ │
+│  └─────────────┘  └─────────────┘  └─────────────────────┘ │
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │                    LLM Layer                         │   │
+│  │  • LLMProvider ABC  • DeepSeek/OpenAI/Mock/Rule     │   │
+│  │  • FallbackChain    • create_provider()             │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │                     CLI (veritas)                     │   │
+│  │  veritas run | status | trace | plugins | demo       │   │
+│  └─────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Core Features
+## Key Capabilities
 
-### Multi-Agent Collaboration
-12 specialized agents with single responsibilities, communicating through a Singleton EventBus.
+### Runtime Engine
+State machine-driven agent execution with hooks, events, observers, and metrics. Handlers fire on state transitions; policies enable autonomous decisions.
 
-### Student Profiling
-6-dimension profiles extracted from natural language via rule engine (70% confidence) and LLM (85% confidence).
+```python
+from veritas import RuntimeEngine, RuntimeHook
 
-### Personalized Learning Paths
-Course auto-detection + pace/cognitive/mastery adjustments produce different paths for different students.
+engine = RuntimeEngine(session_id="demo")
+engine.add_hook(MyHook())
+engine.run()
+```
 
-### Resource Generation (6 types)
-- 📄 Course Notes (Markdown)
-- 🧠 Mind Maps (Mermaid)
-- ✏️ Exercises (3 difficulty levels)
-- 💻 Code Labs (runnable Python)
-- 🎬 Video Scripts (scene-by-scene)
-- 📖 Extended Reading
+### Recovery System
+Automatic failure recovery with 5 strategies: retry, checkpoint rollback, fallback agent, memory repair, terminate. Configurable per agent.
 
-### Self-Improvement Loop
-Evaluation → MetaReflector → ExperienceMemory → ImprovementLoop → Strategy injection
+```python
+from veritas import RuntimeEngine, RecoveryManager
 
-### Content Safety (3-Gate ReviewGate)
-Gate 1: AST static syntax check → Gate 2: Pytest dynamic validation → Gate 3: LLM-as-Judge quality scoring
+engine = RuntimeEngine(session_id="demo", recovery_manager=RecoveryManager())
+```
 
-### Explainable Decisions
-DecisionExplainer produces evidence chains, confidence scores, and reasoning for every agent action.
+### Plugin System
+Extensible plugin architecture. Plugins are hooks — they receive state transitions, errors, and lifecycle events. Error-isolated: one failing plugin doesn't break others.
+
+```python
+from veritas import PluginManager, RuntimePlugin
+
+class SecurityPlugin(RuntimePlugin):
+    name = "security"
+    def on_start(self): ...
+
+mgr = PluginManager()
+mgr.install(SecurityPlugin())
+```
+
+### Distributed Runtime
+Multi-node agent execution with node registry, distributed event bus, remote task execution, and cross-node trace collection.
+
+### SDK (Public Contract Layer)
+Clean public API via `RuntimeClient`. Applications never touch RuntimeEngine internals — they use contracts (TaskRequest, TaskResult, SessionInfo).
+
+### Security Layer
+Permission matrix, tool gateway, prompt injection guard, and audit logging. All security checks are hooks — pluggable with zero engine changes.
+
+### Memory Layer
+Student memory with EMA mastery tracking, experience memory for agent learning, and experience extraction from meta-reflections.
+
+---
+
+## Installation
+
+```bash
+# From GitHub (recommended)
+pip install git+https://github.com/Leisure-Auf1/Veritas-Core.git@main
+
+# From local
+git clone https://github.com/Leisure-Auf1/Veritas-Core.git
+cd Veritas-Core
+pip install -e .
+```
+
+### Requirements
+- Python 3.10+
+- pyyaml >= 6.0
 
 ---
 
 ## Quick Start
 
-```bash
-git clone https://github.com/Leisure-Auf1/A3-Multi-Agent-System.git
-cd A3-Multi-Agent-System
+```python
+from veritas import RuntimeEngine, RuntimeObserver, RuntimeMetrics, RuntimeEventBus
 
-# Install
-pip install -r web/requirements.txt
+# Setup
+bus = RuntimeEventBus()
+metrics = RuntimeMetrics()
+metrics.attach(bus)
+observer = RuntimeObserver(bus=bus)
 
-# Run tests
-python -m pytest tests/ -q
+engine = RuntimeEngine(session_id="quickstart")
+engine.add_hook(observer)
+engine.run()
 
-# Launch Dashboard
-streamlit run web/app_v3.py
+# Results
+print(metrics.summary())
+print(observer.events_by_type("evaluation"))
 ```
+
+More examples in [examples/](examples/).
 
 ---
 
-## Knowledge Base
-
-```
-knowledge_base/artificial_intelligence_multi_agent_course/
-├── course_intro.md
-├── chapters/           # 6 chapters (AI intro, LLM, Prompt, RAG, Agent, Evaluation)
-├── resources.json      # External references
-└── exercises.json      # 24 exercises across 6 chapters
-```
-
----
-
-## Metrics
-
-| Metric | Value |
-|:-------|:------|
-| Agents | 12 |
-| Source Lines | 13,048 Python |
-| Tests | 283/287 (98.6%) |
-| Resource Types | 6 |
-| Profile Dimensions | 6 |
-| Knowledge Concepts | 46 |
-| Experience Lessons | 5→13+ self-growing |
-| Dashboard Panels | 6 |
-
----
-
-## Complete Agent Workflow
-
-A3 demonstrates: **"From user intent to personalized execution through multi-agent collaboration."**
+## Testing
 
 ```bash
-python examples/full_pipeline_demo.py
+make test       # 558 tests
+make test-cov   # With coverage
 ```
-
-### Pipeline Architecture
-
-```
-User Goal ("Learn Python Network Programming")
-    │
-    ▼
-┌─────────────────────────────────────────────────────────┐
-│                  A3Workflow Orchestrator                 │
-│                                                         │
-│  ① ProfileAgent    — Extract learner profile            │
-│        │                                                │
-│        ▼                                                │
-│  ② PlannerAgent    — Generate personalized learning path│
-│        │                                                │
-│        ▼                                                │
-│  ③ ResourceAgent   — Recommend matching resources       │
-│        │                                                │
-│        ▼                                                │
-│  ④ ReviewGate      — Evaluate quality & relevance       │
-│        │                                                │
-│        ▼                                                │
-│  ⑤ ReflectionAgent — Analyze success & improvements     │
-│        │                                                │
-│        ▼                                                │
-│  ⑥ Memory          — Save learning experience           │
-├─────────────────────────────────────────────────────────┤
-│  Infrastructure: EventBus | TraceCollector | MemoryManager│
-└─────────────────────────────────────────────────────────┘
-    │
-    ▼
- WorkflowResult { profile, plan, resources, reflection }
-```
-
-### What happens at each step
-
-| Step | Agent | Input | Output |
-|:-----|:------|:------|:-------|
-| 1 | **ProfileAgent** | Natural language goal | 6-dim DynamicProfile |
-| 2 | **PlannerAgent** | Profile + course KB | LearningPlan (nodes + strategies) |
-| 3 | **ResourceAgent** | Profile + goal + knowledge gaps | Personalized resources (5 types) |
-| 4 | **ReviewGate** | Plan + resources | Quality score + issues |
-| 5 | **ReflectionAgent** | Execution results | Success evaluation + improvements |
-| 6 | **Memory** | All outputs | Persistent student memory |
-
-### Running the demo
-
-```
-================================
-A3 Multi-Agent Demo
-================================
-
-User Goal:
-  Learn Python Network Programming
-
-[ProfileAgent]
-  Analyzing learner profile...
-
-[PlannerAgent]
-  Generating personalized learning path...
-
-[ResourceAgent]
-  Finding matching resources...
-
-[ReviewAgent]
-  Evaluating quality...
-
-[ReflectionAgent]
-  Post-execution reflection...
-
-[Memory]
-  Saving learning experience...
-
-================================
-Completed — Score: 95/100 ✅
-================================
-```
-
-### Key innovations demonstrated
-
-- **Agent communication through EventBus** — Every agent action is traced and visible
-- **Shared memory usage** — Profile history, mastery tracking, experience recall
-- **Intermediate results** — Plan nodes, resource recommendations, quality scores
-- **Final reflection** — Post-execution analysis of what worked and what to improve
-
-New in v3.0:
-- `src/agents/resource_agent.py` — Simplified resource recommendation for pipeline demo
-- `src/agents/reflection_agent.py` — Post-execution success/improvement analysis
-- `src/workflow/` — A3Workflow orchestrator with full pipeline coordination
-- `src/core/event_trace.py` — Enhanced TraceCollector with timeline rendering
-- `examples/full_pipeline_demo.py` — Runnable demo showing the complete collaboration
-- `tests/integration/test_full_pipeline.py` — 42 integration tests (pipeline + EventBus + memory)
 
 ---
 
-## Project Evolution
+## Repository Relationship
 
-```
-A3-Multi-Agent-System
-        │
-        │  Research Foundation
-        │  Multi-agent experimentation
-        │  Prototype validation
-        ↓
-Veritas-Core
-        │
-        │  Engineering Evolution
-        │  Production-grade infrastructure
-        │  Runtime + Trust + Memory
-```
-
-A3 is the **research prototype** where we explored multi-agent learning concepts. [Veritas-Core](https://github.com/Leisure-Auf1/Veritas-Core) is the **architectural evolution** that introduces:
-
-- Agent Runtime State Machine
-- RAG-enhanced knowledge retrieval
-- 3-tier memory (Redis/PostgreSQL/ChromaDB)
-- Trust Layer (memory validation, permissions, injection defense)
-- Agent+Tool architecture
-
-**A3 and Veritas-Core are independent repositories — not a rename, but an evolution.**
+| Repository | Role | Tests |
+|:-----------|:-----|:-----:|
+| **Veritas-Core** | Agent Runtime Framework | 558 |
+| [A3-Multi-Agent-System](https://github.com/Leisure-Auf1/A3-Multi-Agent-System) | AI Learning Application (depends on VC) | 1130 |
+| [Terence-Agent](https://github.com/Leisure-Auf1/Terence-Agent) | Engineering Governance | — |
 
 ---
 
