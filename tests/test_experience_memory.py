@@ -4,7 +4,7 @@ import os, sys, tempfile, unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
-from memory.experience_memory import ExperienceMemoryStore, ExperienceRecord
+from veritas.memory.experience_memory import ExperienceMemoryStore, ExperienceRecord
 
 
 class TestExperienceMemoryStore(unittest.TestCase):

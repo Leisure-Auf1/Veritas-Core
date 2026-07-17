@@ -34,8 +34,8 @@ def demo_basic_pipeline():
     print("  Learn Python Network Programming")
     print()
 
-    from src.workflow import A3Workflow
-    from src.core.event_trace import TraceCollector
+    from veritas.workflow import A3Workflow
+    from veritas.core.event_trace import TraceCollector
 
     # 创建工作流
     workflow = A3Workflow(student_id="demo_user_001")
@@ -144,7 +144,7 @@ def demo_with_knowledge_gaps():
     """带知识缺口的演示"""
     print_separator("A3 Multi-Agent Demo — Knowledge Gap Focus")
 
-    from src.workflow import A3Workflow
+    from veritas.workflow import A3Workflow
 
     workflow = A3Workflow(student_id="demo_user_002")
 
@@ -174,8 +174,8 @@ def demo_event_trace_standalone():
     """独立 EventTrace 演示"""
     print_separator("EventTrace Standalone Demo")
 
-    from src.core.event_trace import create_event_trace, get_execution_timeline
-    from src.core.event_bus import AgentEventBus
+    from veritas.core.event_trace import create_event_trace, get_execution_timeline
+    from veritas.core.event_bus import AgentEventBus
 
     # 重置总线
     AgentEventBus.reset_instance()
@@ -214,8 +214,8 @@ def demo_advanced_pipeline():
     """高级管道演示：自动画像提取 + 课程检测"""
     print_separator("Advanced: Auto-Profile + Course Detection")
 
-    from src.workflow import A3Workflow
-    from src.core.event_trace import TraceCollector
+    from veritas.workflow import A3Workflow
+    from veritas.core.event_trace import TraceCollector
 
     workflow = A3Workflow(student_id="auto_detect_user")
 

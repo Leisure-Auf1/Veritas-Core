@@ -4,7 +4,7 @@ import os, sys, tempfile, unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
-from memory.student_memory import StudentMemory, StudentMemoryStore
+from veritas.memory.student_memory import StudentMemory, StudentMemoryStore
 
 
 class TestStudentMemory(unittest.TestCase):

@@ -6,11 +6,7 @@ test:
 
 # Run tests with coverage
 test-cov:
-	python -m pytest tests/ -v --tb=short --cov=src --cov-report=term-missing
-
-# Launch Streamlit Dashboard
-run:
-	streamlit run web/app_v3.py
+	python -m pytest tests/ -v --tb=short --cov=veritas --cov-report=term-missing
 
 # Clean temporary files
 clean:

@@ -3,7 +3,7 @@ import sys, os, json
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)) + "/..")
 os.environ.setdefault("LLM_PROVIDER", "mock")
 
-from src.workflow import A3Workflow
+from veritas.workflow import A3Workflow
 
 wf = A3Workflow(student_id="render_verify")
 result = wf.run(user_goal="I want to learn Python backend development")

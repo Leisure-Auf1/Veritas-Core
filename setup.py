@@ -1,21 +1,35 @@
 """
-Veritas Agent Runtime — setup
+Veritas-Core Agent Runtime Framework
 
-Minimal setup for the CLI entry point.
-Allows: pip install -e .  →  veritas command available.
+Install: pip install -e .
+Usage:   veritas run --task "analyze" --agent "evaluator"
 """
 from setuptools import setup, find_packages
 
 setup(
     name="veritas-core",
-    version="6.1.0",
-    description="Agent Runtime Framework CLI",
-    packages=find_packages(where=".", include=["src", "src.*"]),
+    version="7.0.0",
+    description="Veritas Agent Runtime Framework — pluggable, observable, recoverable",
+    packages=find_packages(where=".", include=["veritas", "veritas.*"]),
     package_dir={"": "."},
     entry_points={
         "console_scripts": [
-            "veritas = src.cli.main:main",
+            "veritas = veritas.cli.main:main",
         ],
     },
     python_requires=">=3.10",
+    install_requires=[
+        "pyyaml>=6.0",
+    ],
+    extras_require={
+        "dev": [
+            "pytest>=7.0",
+            "pytest-cov",
+        ],
+        "all": [
+            "fastapi",
+            "uvicorn",
+            "streamlit",
+        ],
+    },
 )
