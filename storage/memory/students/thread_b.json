@@ -8,7 +8,7 @@
       "learning_pace": "normal",
       "interaction_preference": "code_sandbox",
       "frustration_threshold": "medium",
-      "timestamp": "2026-07-17T12:21:54.190650+00:00"
+      "timestamp": "2026-07-17T13:53:57.661414+00:00"
     },
     {
       "knowledge_base": "junior_dev",
@@ -17,7 +17,7 @@
       "learning_pace": "normal",
       "interaction_preference": "code_sandbox",
       "frustration_threshold": "medium",
-      "timestamp": "2026-07-17T12:22:23.951022+00:00"
+      "timestamp": "2026-07-17T13:59:40.138228+00:00"
     },
     {
       "knowledge_base": "junior_dev",
@@ -26,7 +26,70 @@
       "learning_pace": "normal",
       "interaction_preference": "code_sandbox",
       "frustration_threshold": "medium",
-      "timestamp": "2026-07-17T12:23:50.240279+00:00"
+      "timestamp": "2026-07-17T14:00:16.674701+00:00"
+    },
+    {
+      "knowledge_base": "junior_dev",
+      "cognitive_style": "visual_dominant",
+      "error_prone_bias": "magic_syntax_blind",
+      "learning_pace": "normal",
+      "interaction_preference": "code_sandbox",
+      "frustration_threshold": "medium",
+      "timestamp": "2026-07-17T14:00:37.325014+00:00"
+    },
+    {
+      "knowledge_base": "junior_dev",
+      "cognitive_style": "visual_dominant",
+      "error_prone_bias": "magic_syntax_blind",
+      "learning_pace": "normal",
+      "interaction_preference": "code_sandbox",
+      "frustration_threshold": "medium",
+      "timestamp": "2026-07-17T14:01:45.311996+00:00"
+    },
+    {
+      "knowledge_base": "junior_dev",
+      "cognitive_style": "visual_dominant",
+      "error_prone_bias": "magic_syntax_blind",
+      "learning_pace": "normal",
+      "interaction_preference": "code_sandbox",
+      "frustration_threshold": "medium",
+      "timestamp": "2026-07-17T14:02:09.852588+00:00"
+    },
+    {
+      "knowledge_base": "junior_dev",
+      "cognitive_style": "visual_dominant",
+      "error_prone_bias": "magic_syntax_blind",
+      "learning_pace": "normal",
+      "interaction_preference": "code_sandbox",
+      "frustration_threshold": "medium",
+      "timestamp": "2026-07-17T14:02:25.116451+00:00"
+    },
+    {
+      "knowledge_base": "junior_dev",
+      "cognitive_style": "visual_dominant",
+      "error_prone_bias": "magic_syntax_blind",
+      "learning_pace": "normal",
+      "interaction_preference": "code_sandbox",
+      "frustration_threshold": "medium",
+      "timestamp": "2026-07-17T14:10:21.139503+00:00"
+    },
+    {
+      "knowledge_base": "junior_dev",
+      "cognitive_style": "visual_dominant",
+      "error_prone_bias": "magic_syntax_blind",
+      "learning_pace": "normal",
+      "interaction_preference": "code_sandbox",
+      "frustration_threshold": "medium",
+      "timestamp": "2026-07-17T14:12:19.331361+00:00"
+    },
+    {
+      "knowledge_base": "junior_dev",
+      "cognitive_style": "visual_dominant",
+      "error_prone_bias": "magic_syntax_blind",
+      "learning_pace": "normal",
+      "interaction_preference": "code_sandbox",
+      "frustration_threshold": "medium",
+      "timestamp": "2026-07-17T14:15:58.419790+00:00"
     }
   ],
   "weak_points": [],
@@ -34,15 +97,15 @@
     "avg_pace": "normal",
     "preferred_style": "visual_dominant",
     "frustration_pattern": "medium",
-    "interaction_count": 3,
+    "interaction_count": 26,
     "avg_score": 0.0,
     "time_of_day_preference": ""
   },
   "mastery_map": {
-    "var_types": 0.58,
-    "control_flow": 0.58,
-    "functions": 0.58,
-    "data_structures": 0.58
+    "var_types": 0.59,
+    "control_flow": 0.59,
+    "functions": 0.59,
+    "data_structures": 0.59
   },
   "feedback_history": [],
   "session_summaries": [
@@ -51,23 +114,72 @@
       "nodes_completed": 4,
       "total_score": 95,
       "time_spent": 0,
-      "timestamp": "2026-07-17T12:21:54.191140+00:00"
+      "timestamp": "2026-07-17T13:53:57.661798+00:00"
     },
     {
       "course_id": "",
       "nodes_completed": 4,
       "total_score": 95,
       "time_spent": 0,
-      "timestamp": "2026-07-17T12:22:23.952221+00:00"
+      "timestamp": "2026-07-17T13:59:40.138513+00:00"
     },
     {
       "course_id": "",
       "nodes_completed": 4,
       "total_score": 95,
       "time_spent": 0,
-      "timestamp": "2026-07-17T12:23:50.240608+00:00"
+      "timestamp": "2026-07-17T14:00:16.675277+00:00"
+    },
+    {
+      "course_id": "",
+      "nodes_completed": 4,
+      "total_score": 95,
+      "time_spent": 0,
+      "timestamp": "2026-07-17T14:00:37.325560+00:00"
+    },
+    {
+      "course_id": "",
+      "nodes_completed": 4,
+      "total_score": 95,
+      "time_spent": 0,
+      "timestamp": "2026-07-17T14:01:45.312415+00:00"
+    },
+    {
+      "course_id": "",
+      "nodes_completed": 4,
+      "total_score": 95,
+      "time_spent": 0,
+      "timestamp": "2026-07-17T14:02:09.852932+00:00"
+    },
+    {
+      "course_id": "",
+      "nodes_completed": 4,
+      "total_score": 95,
+      "time_spent": 0,
+      "timestamp": "2026-07-17T14:02:25.117195+00:00"
+    },
+    {
+      "course_id": "",
+      "nodes_completed": 4,
+      "total_score": 95,
+      "time_spent": 0,
+      "timestamp": "2026-07-17T14:10:21.140671+00:00"
+    },
+    {
+      "course_id": "",
+      "nodes_completed": 4,
+      "total_score": 95,
+      "time_spent": 0,
+      "timestamp": "2026-07-17T14:12:19.331912+00:00"
+    },
+    {
+      "course_id": "",
+      "nodes_completed": 4,
+      "total_score": 95,
+      "time_spent": 0,
+      "timestamp": "2026-07-17T14:15:58.421532+00:00"
     }
   ],
   "created_at": "2026-07-17T12:21:54.190495+00:00",
-  "updated_at": "2026-07-17T12:23:50.240613+00:00"
+  "updated_at": "2026-07-17T14:15:58.421540+00:00"
 }

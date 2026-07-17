@@ -8,7 +8,7 @@
       "learning_pace": "normal",
       "interaction_preference": "code_sandbox",
       "frustration_threshold": "medium",
-      "timestamp": "2026-07-17T12:21:54.118866+00:00"
+      "timestamp": "2026-07-17T13:53:57.586402+00:00"
     },
     {
       "knowledge_base": "junior_dev",
@@ -17,7 +17,7 @@
       "learning_pace": "normal",
       "interaction_preference": "code_sandbox",
       "frustration_threshold": "medium",
-      "timestamp": "2026-07-17T12:22:23.878432+00:00"
+      "timestamp": "2026-07-17T13:59:40.061885+00:00"
     },
     {
       "knowledge_base": "junior_dev",
@@ -26,7 +26,70 @@
       "learning_pace": "normal",
       "interaction_preference": "code_sandbox",
       "frustration_threshold": "medium",
-      "timestamp": "2026-07-17T12:23:50.170713+00:00"
+      "timestamp": "2026-07-17T14:00:16.603809+00:00"
+    },
+    {
+      "knowledge_base": "junior_dev",
+      "cognitive_style": "visual_dominant",
+      "error_prone_bias": "magic_syntax_blind",
+      "learning_pace": "normal",
+      "interaction_preference": "code_sandbox",
+      "frustration_threshold": "medium",
+      "timestamp": "2026-07-17T14:00:37.250558+00:00"
+    },
+    {
+      "knowledge_base": "junior_dev",
+      "cognitive_style": "visual_dominant",
+      "error_prone_bias": "magic_syntax_blind",
+      "learning_pace": "normal",
+      "interaction_preference": "code_sandbox",
+      "frustration_threshold": "medium",
+      "timestamp": "2026-07-17T14:01:45.236452+00:00"
+    },
+    {
+      "knowledge_base": "junior_dev",
+      "cognitive_style": "visual_dominant",
+      "error_prone_bias": "magic_syntax_blind",
+      "learning_pace": "normal",
+      "interaction_preference": "code_sandbox",
+      "frustration_threshold": "medium",
+      "timestamp": "2026-07-17T14:02:09.769522+00:00"
+    },
+    {
+      "knowledge_base": "junior_dev",
+      "cognitive_style": "visual_dominant",
+      "error_prone_bias": "magic_syntax_blind",
+      "learning_pace": "normal",
+      "interaction_preference": "code_sandbox",
+      "frustration_threshold": "medium",
+      "timestamp": "2026-07-17T14:02:25.039832+00:00"
+    },
+    {
+      "knowledge_base": "junior_dev",
+      "cognitive_style": "visual_dominant",
+      "error_prone_bias": "magic_syntax_blind",
+      "learning_pace": "normal",
+      "interaction_preference": "code_sandbox",
+      "frustration_threshold": "medium",
+      "timestamp": "2026-07-17T14:10:21.064902+00:00"
+    },
+    {
+      "knowledge_base": "junior_dev",
+      "cognitive_style": "visual_dominant",
+      "error_prone_bias": "magic_syntax_blind",
+      "learning_pace": "normal",
+      "interaction_preference": "code_sandbox",
+      "frustration_threshold": "medium",
+      "timestamp": "2026-07-17T14:12:19.257825+00:00"
+    },
+    {
+      "knowledge_base": "junior_dev",
+      "cognitive_style": "visual_dominant",
+      "error_prone_bias": "magic_syntax_blind",
+      "learning_pace": "normal",
+      "interaction_preference": "code_sandbox",
+      "frustration_threshold": "medium",
+      "timestamp": "2026-07-17T14:15:58.346593+00:00"
     }
   ],
   "weak_points": [],
@@ -34,27 +97,27 @@
     "avg_pace": "normal",
     "preferred_style": "visual_dominant",
     "frustration_pattern": "medium",
-    "interaction_count": 3,
+    "interaction_count": 26,
     "avg_score": 0.0,
     "time_of_day_preference": ""
   },
   "mastery_map": {
-    "llm_basics": 0.58,
-    "prompt_engineering": 0.58,
-    "llm_interaction": 0.58,
-    "agent_loop": 0.58,
-    "tool_calling": 0.58,
-    "agent_planning": 0.58,
-    "agent_roles": 0.58,
-    "agent_communication": 0.58,
-    "task_decomposition": 0.58,
-    "eventbus_arch": 0.58,
-    "memory_management": 0.58,
-    "state_persistence": 0.58,
-    "trace_observability": 0.58,
-    "evaluation_systems": 0.58,
-    "reflection_loop": 0.58,
-    "system_optimization": 0.58
+    "llm_basics": 0.59,
+    "prompt_engineering": 0.59,
+    "llm_interaction": 0.59,
+    "agent_loop": 0.59,
+    "tool_calling": 0.59,
+    "agent_planning": 0.59,
+    "agent_roles": 0.59,
+    "agent_communication": 0.59,
+    "task_decomposition": 0.59,
+    "eventbus_arch": 0.59,
+    "memory_management": 0.59,
+    "state_persistence": 0.59,
+    "trace_observability": 0.59,
+    "evaluation_systems": 0.59,
+    "reflection_loop": 0.59,
+    "system_optimization": 0.59
   },
   "feedback_history": [],
   "session_summaries": [
@@ -63,23 +126,72 @@
       "nodes_completed": 16,
       "total_score": 100,
       "time_spent": 0,
-      "timestamp": "2026-07-17T12:21:54.119323+00:00"
+      "timestamp": "2026-07-17T13:53:57.586848+00:00"
     },
     {
       "course_id": "",
       "nodes_completed": 16,
       "total_score": 100,
       "time_spent": 0,
-      "timestamp": "2026-07-17T12:22:23.878858+00:00"
+      "timestamp": "2026-07-17T13:59:40.062335+00:00"
     },
     {
       "course_id": "",
       "nodes_completed": 16,
       "total_score": 100,
       "time_spent": 0,
-      "timestamp": "2026-07-17T12:23:50.171216+00:00"
+      "timestamp": "2026-07-17T14:00:16.604373+00:00"
+    },
+    {
+      "course_id": "",
+      "nodes_completed": 16,
+      "total_score": 100,
+      "time_spent": 0,
+      "timestamp": "2026-07-17T14:00:37.251028+00:00"
+    },
+    {
+      "course_id": "",
+      "nodes_completed": 16,
+      "total_score": 100,
+      "time_spent": 0,
+      "timestamp": "2026-07-17T14:01:45.236900+00:00"
+    },
+    {
+      "course_id": "",
+      "nodes_completed": 16,
+      "total_score": 100,
+      "time_spent": 0,
+      "timestamp": "2026-07-17T14:02:09.769971+00:00"
+    },
+    {
+      "course_id": "",
+      "nodes_completed": 16,
+      "total_score": 100,
+      "time_spent": 0,
+      "timestamp": "2026-07-17T14:02:25.040275+00:00"
+    },
+    {
+      "course_id": "",
+      "nodes_completed": 16,
+      "total_score": 100,
+      "time_spent": 0,
+      "timestamp": "2026-07-17T14:10:21.065335+00:00"
+    },
+    {
+      "course_id": "",
+      "nodes_completed": 16,
+      "total_score": 100,
+      "time_spent": 0,
+      "timestamp": "2026-07-17T14:12:19.258285+00:00"
+    },
+    {
+      "course_id": "",
+      "nodes_completed": 16,
+      "total_score": 100,
+      "time_spent": 0,
+      "timestamp": "2026-07-17T14:15:58.347008+00:00"
     }
   ],
   "created_at": "2026-07-17T12:21:54.118786+00:00",
-  "updated_at": "2026-07-17T12:23:50.171222+00:00"
+  "updated_at": "2026-07-17T14:15:58.347014+00:00"
 }
