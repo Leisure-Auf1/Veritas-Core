@@ -28,10 +28,11 @@ class LLMResponse:
         "completion_tokens": 0,
         "total_tokens": 0,
     })
-    finish_reason: str = "stop"  # stop | length | content_filter | error
+    finish_reason: str = "stop"  # stop | length | content_filter | error | tool_calls
     raw_response: Optional[Dict[str, Any]] = None
     error: Optional[str] = None
     latency_ms: float = 0.0       # Phase 4.7 — provider round-trip latency
+    tool_calls: list = field(default_factory=list)  # PR #4 — [{id, name, arguments}]
 
     @property
     def success(self) -> bool:

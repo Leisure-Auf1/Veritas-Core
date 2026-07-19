@@ -65,6 +65,10 @@ DEFAULT_PERMISSIONS: Dict[str, List[Capability]] = {
         Capability.READ_MEMORY, Capability.EVALUATE,
         Capability.SEND_EVENT,
     ],
+    "TutorAgent": [
+        Capability.CALL_LLM, Capability.CALL_TOOL,
+        Capability.READ_MEMORY, Capability.SEND_EVENT,
+    ],
 }
 
 

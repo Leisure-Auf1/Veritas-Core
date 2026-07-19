@@ -125,6 +125,20 @@ class DeepSeekProvider(LLMProvider):
         message = choice.get("message", {})
         usage = raw.get("usage", {})
 
+        # PR #4 — extract tool_calls from response
+        tool_calls = []
+        raw_tool_calls = message.get("tool_calls", [])
+        for tc in raw_tool_calls:
+            fn = tc.get("function", {})
+            tool_calls.append({
+                "id": tc.get("id", ""),
+                "name": fn.get("name", ""),
+                "arguments": fn.get("arguments", "{}"),
+            })
+        finish_reason = choice.get("finish_reason", "stop")
+        if tool_calls and not message.get("content"):
+            finish_reason = "tool_calls"
+
         return LLMResponse(
             content=message.get("content", ""),
             model=raw.get("model", self.model),
@@ -133,7 +147,8 @@ class DeepSeekProvider(LLMProvider):
                 "completion_tokens": usage.get("completion_tokens", 0),
                 "total_tokens": usage.get("total_tokens", 0),
             },
-            finish_reason=choice.get("finish_reason", "stop"),
+            finish_reason=finish_reason,
             raw_response=raw,
             latency_ms=elapsed_s * 1000,
+            tool_calls=tool_calls,
         )
